@@ -16,6 +16,7 @@ class App{
     }else{
         $url = "home";
     }
+        
      // /product/show/5/ ->  product: recurso  ; show: accion ; 5: parametro
     $arguments = explode('/', trim($url,'/'));
     $controllerName = array_shift($arguments); // product ; ProductController
@@ -26,10 +27,15 @@ class App{
         $method = "index";
     }
 
+         
     // voy a cargar el controlador. ProductController.php
-    $file = "app/controllers/$controllerName" . ".php";
+    $file = "../app/controllers/$controllerName" . ".php";
+   
     if(file_exists($file)){
-        require_once $file; //importo el fichreo si existe
+       // var_dump($file);    
+       // die();
+        require_once $file; //importo el fichreo si existe      
+
     }else{
         http_response_code(404);
         die("No encontrado");
