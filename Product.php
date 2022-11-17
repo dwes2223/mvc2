@@ -1,5 +1,6 @@
 <?php
    // Fichero que simula el modelo con datos
+   //namespace global -> \
   class Product{
     const PRODUCTS = [
         array(1,'Cortacesped'),
