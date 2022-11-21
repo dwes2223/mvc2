@@ -1,6 +1,9 @@
 <?php
+   namespace Core;
 
- /*
+use App\Controllers\HomeController;
+
+/*
     - Si no la url no especifica ningun controlador (recurso) => asigno 
      uno por defecto => home
     - Si no la url no especifica ningun metodo => asigno por defecto : index
@@ -42,6 +45,10 @@ class App{
     }
 
     //existe el metodo en el controlador ?
+    //$controllerObject = new HomeController;
+    //$controllerObject = new LoginController;
+
+   $controllerName =  "\\App\\Controllers\\$controllerName";
     $controllerObject = new $controllerName; //objecto de la clase
     if(method_exists($controllerObject,$method)){
         $controllerObject->$method($arguments); //metodo ok-> lo invoco.

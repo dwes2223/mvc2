@@ -14,7 +14,7 @@ class ProductController
         //echo "<br>Dentro index de PRODUCTCONTROLLER";
         // metodo home de Controller de mvc00
         $products = \Product::all();
-        require "../views/product.php";
+        require "../app/views/product.php";
     }//fin_mindex
 
     function show(){
@@ -22,7 +22,7 @@ class ProductController
         // metodo show de Controller de mvc00
         $id = $_GET["id"];        
         $product = \Product::find($id); //vendra de start.php
-        require "../views/show.php";
+        require "../app/views/show.php";
     }//fin_mindex
     
     
