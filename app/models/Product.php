@@ -1,7 +1,9 @@
 <?php
+
+namespace App\Models;
    // Fichero que simula el modelo con datos
    //namespace global -> \
-  class Product{
+class Product{
     const PRODUCTS = [
         array(1,'Cortacesped'),
         array(2,'Pizarra'),

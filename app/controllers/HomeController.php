@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controllers;
+
 class HomeController
 {
     function __construct()
@@ -8,7 +10,7 @@ class HomeController
     }//fin_constructor
 
     function index(){
-        //echo "<br>Dentro index de HOMECONTROLLER";
+        echo "<br>Dentro index de HOMECONTROLLER";
         // metodo home de Controller de mvc00
         
     }//fin_mindex
