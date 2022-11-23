@@ -2,6 +2,7 @@
   namespace App\Controllers;
 
   use \App\Models\Product;
+  use Dompdf\Dompdf;
 //   require_once "../Product.php";
   
 
@@ -19,6 +20,17 @@ class ProductController
         require "../views/product.php";
     }//fin_mindex
 
+    public function pdf()
+    {
+        //$products = Product::all();
+        
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml('<h1>Hola mundo</h1><br>');
+        header("Content-type: application/pdf");
+        header("Content-Disposition: inline; filename=documento.pdf");
+        $dompdf->render();
+        $dompdf->stream();
+    }
     function show(){
         //echo "<br>Dentro de show de PRODUCTCONTROLLER";
         // metodo show de Controller de mvc00
